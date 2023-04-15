@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		7D1B720D29EB46ED00E02836 /* DateStepper.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B720C29EB46ED00E02836 /* DateStepper.docc */; };
 		7D1B720E29EB46ED00E02836 /* DateStepper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D1B720B29EB46ED00E02836 /* DateStepper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D1B721529EB47BC00E02836 /* Stepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B721429EB47BC00E02836 /* Stepper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7D1B720829EB46ED00E02836 /* DateStepper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DateStepper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1B720B29EB46ED00E02836 /* DateStepper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateStepper.h; sourceTree = "<group>"; };
 		7D1B720C29EB46ED00E02836 /* DateStepper.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = DateStepper.docc; sourceTree = "<group>"; };
+		7D1B721429EB47BC00E02836 /* Stepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stepper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,7 @@
 		7D1B71FE29EB46ED00E02836 = {
 			isa = PBXGroup;
 			children = (
+				7D1B721429EB47BC00E02836 /* Stepper.swift */,
 				7D1B720A29EB46ED00E02836 /* DateStepper */,
 				7D1B720929EB46ED00E02836 /* Products */,
 			);
@@ -133,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D1B720D29EB46ED00E02836 /* DateStepper.docc in Sources */,
+				7D1B721529EB47BC00E02836 /* Stepper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
