@@ -22,6 +22,26 @@ class ViewController: UIViewController {
                            stepper.heightAnchor.constraint(equalToConstant: 60)]
         NSLayoutConstraint.activate(constraints)
         
+        
+        
+        // TODO: Refactor Date calculation process and add it to the correct class
+        // This is the process to get the current month, convert it to int to add or substract and then convert it back to string
+        // Add some methods or think a way to refactor this or find a generic way to implement this
+        let date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day, .month, .year], from: date)
+        let month = components.month
+        print(month)
+        
+        let myMonth = 4
+        
+        let myNewDateComponents = DateComponents(calendar: calendar, month: myMonth)
+        let myNewDate = calendar.date(from: myNewDateComponents)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM"
+        let stringDate = dateFormatter.string(from: myNewDate!)
+        print(" My month was: \(stringDate)")
+        
         // Do any additional setup after loading the view.
         
     }

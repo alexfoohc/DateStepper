@@ -52,16 +52,17 @@ public final class DateStepper: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = monthValue.capitalized
+        label.text = monthValueString.capitalized
         label.textColor = .black
         label.font = UIFont(name: "Avenir Black", size: 17)
         return label
     }()
     
-    private (set) var monthValue: String = Date().getCurrentMonth()
+    private (set) var monthValueString: String = Date().getCurrentMonth()
     private (set) var stepperType: DateType?
     private (set) var buttonIcon: ButtonIcon?
     private (set) var buttonTintColor: UIColor?
+    private var currentValue: Date = Date()
     
     
     // MARK: - Set up
@@ -81,14 +82,14 @@ public final class DateStepper: UIView {
     private func getStepperType(dateType: DateType) -> String {
         switch dateType {
         case .full:
-            monthValue = Date().showFullDate()
+            monthValueString = Date().showFullDate()
         case .year:
-            monthValue = Date().showOnlyYear()
+            monthValueString = Date().showOnlyYear()
         default:
-            monthValue = Date().getCurrentMonth()
+            monthValueString = Date().getCurrentMonth()
         }
         
-        return monthValue
+        return monthValueString
     }
     
     
@@ -99,7 +100,7 @@ public final class DateStepper: UIView {
         self.stepperType = stepperType ?? .month
         self.buttonIcon = buttonIcon ?? .chevron
         self.buttonTintColor = buttonTintColor ?? .black
-        self.monthValue = getStepperType(dateType: self.stepperType ?? .month)
+        self.monthValueString = getStepperType(dateType: self.stepperType ?? .month)
         setup()
     }
     
@@ -131,10 +132,15 @@ public final class DateStepper: UIView {
     }
     @objc private func buttonTapped(_ sender: UIButton) {
         print(sender.tag)
+        
     }
     
     private func updateLabel() {
        
+    }
+    
+    private func addValue() {
+        
     }
     
     // MARK: - Date Animations

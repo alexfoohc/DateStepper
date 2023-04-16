@@ -45,4 +45,15 @@ extension Date {
         let dateString = dateFormatter.string(from: date)
         return dateString
     }
+    
+    private func returnComponent() -> Int {
+        let date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        guard let month = components.month else {
+            return 0 
+        }
+        
+       return month
+    }
 }
