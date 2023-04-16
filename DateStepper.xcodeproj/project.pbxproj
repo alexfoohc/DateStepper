@@ -9,14 +9,56 @@
 /* Begin PBXBuildFile section */
 		7D1B720D29EB46ED00E02836 /* DateStepper.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B720C29EB46ED00E02836 /* DateStepper.docc */; };
 		7D1B720E29EB46ED00E02836 /* DateStepper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D1B720B29EB46ED00E02836 /* DateStepper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7D1B721529EB47BC00E02836 /* Stepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B721429EB47BC00E02836 /* Stepper.swift */; };
+		7D1B721529EB47BC00E02836 /* DateStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B721429EB47BC00E02836 /* DateStepper.swift */; };
+		7D1B721729EB4A6000E02836 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B721629EB4A6000E02836 /* Date + Extension.swift */; };
+		7DEE2B8A29EB60CD005521F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE2B8929EB60CD005521F5 /* AppDelegate.swift */; };
+		7DEE2B8C29EB60CD005521F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE2B8B29EB60CD005521F5 /* SceneDelegate.swift */; };
+		7DEE2B8E29EB60CD005521F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE2B8D29EB60CD005521F5 /* ViewController.swift */; };
+		7DEE2B9129EB60CD005521F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DEE2B8F29EB60CD005521F5 /* Main.storyboard */; };
+		7DEE2B9329EB60CE005521F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DEE2B9229EB60CE005521F5 /* Assets.xcassets */; };
+		7DEE2B9629EB60CE005521F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DEE2B9429EB60CE005521F5 /* LaunchScreen.storyboard */; };
+		7DEE2B9D29EB6230005521F5 /* DateStepper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1B720829EB46ED00E02836 /* DateStepper.framework */; };
+		7DEE2B9E29EB6230005521F5 /* DateStepper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1B720829EB46ED00E02836 /* DateStepper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7DEE2BA029EB62C2005521F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D1B71FF29EB46ED00E02836 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D1B720729EB46ED00E02836;
+			remoteInfo = DateStepper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7DEE2B9F29EB6230005521F5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7DEE2B9E29EB6230005521F5 /* DateStepper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7D1B720829EB46ED00E02836 /* DateStepper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DateStepper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1B720B29EB46ED00E02836 /* DateStepper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateStepper.h; sourceTree = "<group>"; };
 		7D1B720C29EB46ED00E02836 /* DateStepper.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = DateStepper.docc; sourceTree = "<group>"; };
-		7D1B721429EB47BC00E02836 /* Stepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stepper.swift; sourceTree = "<group>"; };
+		7D1B721429EB47BC00E02836 /* DateStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStepper.swift; sourceTree = "<group>"; };
+		7D1B721629EB4A6000E02836 /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
+		7DEE2B8729EB60CD005521F5 /* DateStepperDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DateStepperDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DEE2B8929EB60CD005521F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7DEE2B8B29EB60CD005521F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7DEE2B8D29EB60CD005521F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7DEE2B9029EB60CD005521F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7DEE2B9229EB60CE005521F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7DEE2B9529EB60CE005521F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7DEE2B9729EB60CE005521F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,15 +69,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7DEE2B8429EB60CD005521F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DEE2B9D29EB6230005521F5 /* DateStepper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		7D1B71FE29EB46ED00E02836 = {
 			isa = PBXGroup;
 			children = (
-				7D1B721429EB47BC00E02836 /* Stepper.swift */,
 				7D1B720A29EB46ED00E02836 /* DateStepper */,
+				7DEE2B8829EB60CD005521F5 /* DateStepperDemo */,
 				7D1B720929EB46ED00E02836 /* Products */,
+				7DEE2B9B29EB60E6005521F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -43,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				7D1B720829EB46ED00E02836 /* DateStepper.framework */,
+				7DEE2B8729EB60CD005521F5 /* DateStepperDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -50,10 +102,33 @@
 		7D1B720A29EB46ED00E02836 /* DateStepper */ = {
 			isa = PBXGroup;
 			children = (
+				7D1B721429EB47BC00E02836 /* DateStepper.swift */,
+				7D1B721629EB4A6000E02836 /* Date + Extension.swift */,
 				7D1B720B29EB46ED00E02836 /* DateStepper.h */,
 				7D1B720C29EB46ED00E02836 /* DateStepper.docc */,
 			);
 			path = DateStepper;
+			sourceTree = "<group>";
+		};
+		7DEE2B8829EB60CD005521F5 /* DateStepperDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE2B8929EB60CD005521F5 /* AppDelegate.swift */,
+				7DEE2B8B29EB60CD005521F5 /* SceneDelegate.swift */,
+				7DEE2B8D29EB60CD005521F5 /* ViewController.swift */,
+				7DEE2B8F29EB60CD005521F5 /* Main.storyboard */,
+				7DEE2B9229EB60CE005521F5 /* Assets.xcassets */,
+				7DEE2B9429EB60CE005521F5 /* LaunchScreen.storyboard */,
+				7DEE2B9729EB60CE005521F5 /* Info.plist */,
+			);
+			path = DateStepperDemo;
+			sourceTree = "<group>";
+		};
+		7DEE2B9B29EB60E6005521F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -88,6 +163,25 @@
 			productReference = 7D1B720829EB46ED00E02836 /* DateStepper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		7DEE2B8629EB60CD005521F5 /* DateStepperDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DEE2B9829EB60CE005521F5 /* Build configuration list for PBXNativeTarget "DateStepperDemo" */;
+			buildPhases = (
+				7DEE2B8329EB60CD005521F5 /* Sources */,
+				7DEE2B8429EB60CD005521F5 /* Frameworks */,
+				7DEE2B8529EB60CD005521F5 /* Resources */,
+				7DEE2B9F29EB6230005521F5 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7DEE2BA129EB62C2005521F5 /* PBXTargetDependency */,
+			);
+			name = DateStepperDemo;
+			productName = DateStepperDemo;
+			productReference = 7DEE2B8729EB60CD005521F5 /* DateStepperDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -95,9 +189,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					7D1B720729EB46ED00E02836 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					7DEE2B8629EB60CD005521F5 = {
 						CreatedOnToolsVersion = 14.3;
 					};
 				};
@@ -116,6 +214,7 @@
 			projectRoot = "";
 			targets = (
 				7D1B720729EB46ED00E02836 /* DateStepper */,
+				7DEE2B8629EB60CD005521F5 /* DateStepperDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +227,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7DEE2B8529EB60CD005521F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DEE2B9629EB60CE005521F5 /* LaunchScreen.storyboard in Resources */,
+				7DEE2B9329EB60CE005521F5 /* Assets.xcassets in Resources */,
+				7DEE2B9129EB60CD005521F5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -136,11 +245,49 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D1B720D29EB46ED00E02836 /* DateStepper.docc in Sources */,
-				7D1B721529EB47BC00E02836 /* Stepper.swift in Sources */,
+				7D1B721529EB47BC00E02836 /* DateStepper.swift in Sources */,
+				7D1B721729EB4A6000E02836 /* Date + Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DEE2B8329EB60CD005521F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DEE2B8E29EB60CD005521F5 /* ViewController.swift in Sources */,
+				7DEE2B8A29EB60CD005521F5 /* AppDelegate.swift in Sources */,
+				7DEE2B8C29EB60CD005521F5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7DEE2BA129EB62C2005521F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D1B720729EB46ED00E02836 /* DateStepper */;
+			targetProxy = 7DEE2BA029EB62C2005521F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7DEE2B8F29EB60CD005521F5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DEE2B9029EB60CD005521F5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7DEE2B9429EB60CE005521F5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DEE2B9529EB60CE005521F5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7D1B720F29EB46ED00E02836 /* Debug */ = {
@@ -325,6 +472,62 @@
 			};
 			name = Release;
 		};
+		7DEE2B9929EB60CE005521F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 36V4VFDU99;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DateStepperDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexhernandez.DateStepperDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7DEE2B9A29EB60CE005521F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 36V4VFDU99;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DateStepperDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexhernandez.DateStepperDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -342,6 +545,15 @@
 			buildConfigurations = (
 				7D1B721229EB46ED00E02836 /* Debug */,
 				7D1B721329EB46ED00E02836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DEE2B9829EB60CE005521F5 /* Build configuration list for PBXNativeTarget "DateStepperDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DEE2B9929EB60CE005521F5 /* Debug */,
+				7DEE2B9A29EB60CE005521F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
