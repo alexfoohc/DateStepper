@@ -10,7 +10,7 @@
 		7D1B720D29EB46ED00E02836 /* DateStepper.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B720C29EB46ED00E02836 /* DateStepper.docc */; };
 		7D1B720E29EB46ED00E02836 /* DateStepper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D1B720B29EB46ED00E02836 /* DateStepper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D1B721529EB47BC00E02836 /* DateStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B721429EB47BC00E02836 /* DateStepper.swift */; };
-		7D1B721729EB4A6000E02836 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B721629EB4A6000E02836 /* Date + Extension.swift */; };
+		7D7C0FA629ECB8D200C7AAE4 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C0FA529ECB8D200C7AAE4 /* DateManager.swift */; };
 		7DEE2B8A29EB60CD005521F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE2B8929EB60CD005521F5 /* AppDelegate.swift */; };
 		7DEE2B8C29EB60CD005521F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE2B8B29EB60CD005521F5 /* SceneDelegate.swift */; };
 		7DEE2B8E29EB60CD005521F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE2B8D29EB60CD005521F5 /* ViewController.swift */; };
@@ -50,7 +50,7 @@
 		7D1B720B29EB46ED00E02836 /* DateStepper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateStepper.h; sourceTree = "<group>"; };
 		7D1B720C29EB46ED00E02836 /* DateStepper.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = DateStepper.docc; sourceTree = "<group>"; };
 		7D1B721429EB47BC00E02836 /* DateStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStepper.swift; sourceTree = "<group>"; };
-		7D1B721629EB4A6000E02836 /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
+		7D7C0FA529ECB8D200C7AAE4 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		7DEE2B8729EB60CD005521F5 /* DateStepperDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DateStepperDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEE2B8929EB60CD005521F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DEE2B8B29EB60CD005521F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,9 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				7D1B721429EB47BC00E02836 /* DateStepper.swift */,
-				7D1B721629EB4A6000E02836 /* Date + Extension.swift */,
 				7D1B720B29EB46ED00E02836 /* DateStepper.h */,
 				7D1B720C29EB46ED00E02836 /* DateStepper.docc */,
+				7D7C0FA529ECB8D200C7AAE4 /* DateManager.swift */,
 			);
 			path = DateStepper;
 			sourceTree = "<group>";
@@ -245,8 +245,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D1B720D29EB46ED00E02836 /* DateStepper.docc in Sources */,
+				7D7C0FA629ECB8D200C7AAE4 /* DateManager.swift in Sources */,
 				7D1B721529EB47BC00E02836 /* DateStepper.swift in Sources */,
-				7D1B721729EB4A6000E02836 /* Date + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

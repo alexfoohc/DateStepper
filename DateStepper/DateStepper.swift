@@ -12,17 +12,6 @@ protocol CustomStepperDelegate {
     func valueChanged()
 }
 
-public enum DateType {
-    case full
-    case month
-    case year
-}
-
-public enum ButtonIcon {
-    case chevron
-    case regular
-}
-
 private enum ButtonDirection {
     case left
     case right
@@ -34,10 +23,15 @@ public final class DateStepper: UIView {
     
     // MARK: - Variable declaration
     
-    private lazy var rightButton = configureButtonWith(icon: buttonIcon!, direction: .right, tintColor: buttonTintColor!, tag: 1)
-    private lazy var leftButton = configureButtonWith(icon: buttonIcon!, direction: .left, tintColor: buttonTintColor!, tag: 0)
+    private lazy var rightButton = configureButtonWith(direction: .right, tintColor: buttonTintColor!, tag: 1)
+    private lazy var leftButton = configureButtonWith(direction: .left, tintColor: buttonTintColor!, tag: 0)
     
+    let dateManager = DateManager()
     var delegate: CustomStepperDelegate?
+    private (set) var monthValueString: String = ""
+    private (set) var currentMonth: Date?
+    private (set) var buttonTintColor: UIColor?
+    private var currentValue: Date = Date()
     
     private lazy var container: UIStackView = {
         let stack = UIStackView()
@@ -58,13 +52,6 @@ public final class DateStepper: UIView {
         return label
     }()
     
-    private (set) var monthValueString: String = Date().getCurrentMonth()
-    private (set) var stepperType: DateType?
-    private (set) var buttonIcon: ButtonIcon?
-    private (set) var buttonTintColor: UIColor?
-    private var currentValue: Date = Date()
-    
-    
     // MARK: - Set up
     private func setup() {
         backgroundColor = .clear
@@ -77,53 +64,29 @@ public final class DateStepper: UIView {
         [leftButton, label, rightButton].forEach(container.addArrangedSubview(_:))
 
     }
-    
-    // This is only applied at the init to get which type of label is being chosen
-    private func getStepperType(dateType: DateType) -> String {
-        switch dateType {
-        case .full:
-            monthValueString = Date().showFullDate()
-        case .year:
-            monthValueString = Date().showOnlyYear()
-        default:
-            monthValueString = Date().getCurrentMonth()
-        }
-        
-        return monthValueString
-    }
-    
-    
 
     // MARK: - Init with default parameters
-    public init(stepperType: DateType?, buttonIcon: ButtonIcon?, buttonTintColor: UIColor?) {
+    public init(buttonTintColor: UIColor?) {
         super.init(frame: .zero)
-        self.stepperType = stepperType ?? .month
-        self.buttonIcon = buttonIcon ?? .chevron
         self.buttonTintColor = buttonTintColor ?? .black
-        self.monthValueString = getStepperType(dateType: self.stepperType ?? .month)
+        self.monthValueString = dateManager.getCurrentMonthString()
+//        self.currentMonth = dateManager.getCurrentMonth()
         setup()
     }
     
-    
-
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     
     // MARK: - Button methods
-    private func configureButtonWith(icon: ButtonIcon, direction: ButtonDirection, tintColor: UIColor, tag: Int) -> UIButton {
+    private func configureButtonWith(direction: ButtonDirection, tintColor: UIColor, tag: Int) -> UIButton {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        switch (icon, direction) {
-        case (ButtonIcon.chevron, ButtonDirection.left):
+        if direction == .left {
             button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        case (ButtonIcon.chevron, ButtonDirection.right):
+        } else {
             button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
-        case (ButtonIcon.regular, ButtonDirection.left):
-            button.setImage(UIImage(systemName: "minus"), for: .normal)
-        case (ButtonIcon.regular, ButtonDirection.right):
-            button.setImage(UIImage(systemName: "plus"), for: .normal)
         }
         button.tag = tag
         button.tintColor = tintColor
@@ -132,14 +95,24 @@ public final class DateStepper: UIView {
     }
     @objc private func buttonTapped(_ sender: UIButton) {
         print(sender.tag)
-        
+        switch sender.tag {
+        case 0:
+            showPreviousMonth()
+        case 1:
+            showNextMonth()
+        default:
+            print("Hey")
+        }
+    }
+
+    private func showNextMonth() {
+//        let month = calendar.date(from: dateManager.getCurrentMonth())
+//        print(month)
+//        monthValueString = dateManager.getActualMonthValueFrom(date: <#T##Date#>)
+        label.text = monthValueString
     }
     
-    private func updateLabel() {
-       
-    }
-    
-    private func addValue() {
+    private func showPreviousMonth() {
         
     }
     

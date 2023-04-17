@@ -12,8 +12,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let stepper = DateStepper(stepperType: nil, buttonIcon: nil, buttonTintColor: nil)
+        let stepper = DateStepper(buttonTintColor: nil)
         stepper.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stepper)
         let constraints = [stepper.topAnchor.constraint(equalTo: view.topAnchor, constant: 65),
