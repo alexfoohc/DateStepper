@@ -20,16 +20,14 @@ private enum ButtonDirection {
 
 public final class DateStepper: UIView {
     
-    
     // MARK: - Variable declaration
-    
     private lazy var rightButton = configureButtonWith(direction: .right, tintColor: buttonTintColor!, tag: 1)
     private lazy var leftButton = configureButtonWith(direction: .left, tintColor: buttonTintColor!, tag: 0)
     
     let dateManager = DateManager()
     var delegate: CustomStepperDelegate?
     private (set) var monthValueString: String = ""
-    private (set) var currentMonth: Date?
+    private (set) var currentMonth: Date = Date()
     private (set) var buttonTintColor: UIColor?
     private var currentValue: Date = Date()
     
@@ -49,6 +47,7 @@ public final class DateStepper: UIView {
         label.text = monthValueString.capitalized
         label.textColor = .black
         label.font = UIFont(name: "Avenir Black", size: 17)
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
@@ -69,15 +68,13 @@ public final class DateStepper: UIView {
     public init(buttonTintColor: UIColor?) {
         super.init(frame: .zero)
         self.buttonTintColor = buttonTintColor ?? .black
-        self.monthValueString = dateManager.getCurrentMonthString()
-//        self.currentMonth = dateManager.getCurrentMonth()
+        self.monthValueString = dateManager.getCurrentMonthString(date: currentMonth)
         setup()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     // MARK: - Button methods
     private func configureButtonWith(direction: ButtonDirection, tintColor: UIColor, tag: Int) -> UIButton {
@@ -93,29 +90,24 @@ public final class DateStepper: UIView {
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
     }
+    
     @objc private func buttonTapped(_ sender: UIButton) {
         print(sender.tag)
         switch sender.tag {
         case 0:
-            showPreviousMonth()
+            currentMonth = dateManager.calculateMonth(date: currentMonth, calculation: .substract)
+            monthValueString = dateManager.getCurrentMonthString(date: currentMonth)
+            updateValue()
         case 1:
-            showNextMonth()
+            currentMonth = dateManager.calculateMonth(date: currentMonth, calculation: .add)
+            monthValueString = dateManager.getCurrentMonthString(date: currentMonth)
+            updateValue()
         default:
             print("Hey")
         }
+
     }
 
-    private func showNextMonth() {
-//        let month = calendar.date(from: dateManager.getCurrentMonth())
-//        print(month)
-//        monthValueString = dateManager.getActualMonthValueFrom(date: <#T##Date#>)
-        label.text = monthValueString
-    }
-    
-    private func showPreviousMonth() {
-        
-    }
-    
     // MARK: - Date Animations
     
     private func nextDateAnimation() {
@@ -128,6 +120,8 @@ public final class DateStepper: UIView {
     
     
     
-//    private func updateValue(_ )
+    private func updateValue() {
+        label.text = monthValueString
+    }
     
 }
