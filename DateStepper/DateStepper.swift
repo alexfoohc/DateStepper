@@ -26,6 +26,8 @@ public final class DateStepper: UIView {
     
     let dateManager = DateManager()
     var delegate: CustomStepperDelegate?
+    var showTodayButton: Bool = true
+    
     private (set) var monthValueString: String = ""
     private (set) var currentMonth: Date = Date()
     private (set) var buttonTintColor: UIColor?
@@ -36,7 +38,7 @@ public final class DateStepper: UIView {
         stack.axis = .horizontal
         stack.distribution = .fillEqually
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.spacing = 0
+        stack.spacing = 10
         return stack
     }()
     
@@ -53,6 +55,7 @@ public final class DateStepper: UIView {
     
     // MARK: - Set up
     private func setup() {
+        let tapToResetMonth = UITapGestureRecognizer(target: self, action: #selector(resetButtonTapped))
         backgroundColor = .clear
         addSubview(container)
         let constraints = [container.topAnchor.constraint(equalTo: topAnchor),
@@ -61,6 +64,8 @@ public final class DateStepper: UIView {
                            container.bottomAnchor.constraint(equalTo: bottomAnchor)]
         NSLayoutConstraint.activate(constraints)
         [leftButton, label, rightButton].forEach(container.addArrangedSubview(_:))
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(tapToResetMonth)
 
     }
 
@@ -79,33 +84,45 @@ public final class DateStepper: UIView {
     // MARK: - Button methods
     private func configureButtonWith(direction: ButtonDirection, tintColor: UIColor, tag: Int) -> UIButton {
         let button = UIButton()
+        var config = UIButton.Configuration.plain()
+        
         button.translatesAutoresizingMaskIntoConstraints = false
         if direction == .left {
-            button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+//            button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+            config.image = UIImage(systemName: "chevron.left")
+            button.contentHorizontalAlignment = .trailing
+            
         } else {
-            button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
+//            button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
+            config.image = UIImage(systemName: "chevron.right")
+            button.contentHorizontalAlignment = .leading
         }
         button.tag = tag
         button.tintColor = tintColor
-        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(arrowButtonTapped), for: .touchUpInside)
+        button.configuration = config
         return button
     }
     
-    @objc private func buttonTapped(_ sender: UIButton) {
+    @objc private func arrowButtonTapped(_ sender: UIButton) {
         print(sender.tag)
         switch sender.tag {
         case 0:
             currentMonth = dateManager.calculateMonth(date: currentMonth, calculation: .substract)
-            monthValueString = dateManager.getCurrentMonthString(date: currentMonth)
-            updateValue()
+            updateValueWith(date: currentMonth)
+            print(currentMonth)
         case 1:
             currentMonth = dateManager.calculateMonth(date: currentMonth, calculation: .add)
-            monthValueString = dateManager.getCurrentMonthString(date: currentMonth)
-            updateValue()
+            updateValueWith(date: currentMonth)
+            print(currentMonth)
         default:
             print("Hey")
         }
-
+    }
+    
+    @objc  func resetButtonTapped() {
+        currentMonth = Date()
+        updateValueWith(date: currentMonth)
     }
 
     // MARK: - Date Animations
@@ -120,7 +137,8 @@ public final class DateStepper: UIView {
     
     
     
-    private func updateValue() {
+    private func updateValueWith(date: Date) {
+        monthValueString = dateManager.getCurrentMonthString(date: date)
         label.text = monthValueString
     }
     

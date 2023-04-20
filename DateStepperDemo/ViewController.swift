@@ -19,7 +19,6 @@ class ViewController: UIViewController {
                            stepper.widthAnchor.constraint(equalToConstant: 360),
                            stepper.heightAnchor.constraint(equalToConstant: 60)]
         NSLayoutConstraint.activate(constraints)
-                
     }
 
 }
